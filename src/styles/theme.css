@@ -1,0 +1,24 @@
+:root {
+  /* Palette */
+  --maroon-deep: #4a0e1a;
+  --temple-red: #8c1c2e;
+  --gold: #c9a24b;
+  --gold-soft: #e3c987;
+  --ivory: #f7efdc;
+  --bronze: #8a6a3d;
+  --charcoal: #1c1716;
+  --charcoal-soft: #2a2220;
+
+  /* Text colours (ivory on dark has strong contrast) */
+  --text-main: #f7efdc;
+  --text-muted: #cdbf9f;
+
+  /* Fonts (Noto Serif Tamil is the fallback for Tamil text) */
+  --font-heading: "Cormorant Garamond", "Noto Serif Tamil", Georgia, serif;
+  --font-body: "Lora", "Noto Serif Tamil", Georgia, serif;
+
+  /* Spacing and shape */
+  --radius: 14px;
+  --gold-line: 1px solid rgba(201, 162, 75, 0.55);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.45);
+}

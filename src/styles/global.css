@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--charcoal);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* Visible keyboard focus for accessibility */
+:focus-visible {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 3px;
+}
+
+/* ---------- Background artwork ---------- */
+.bg-artwork {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+/* Layer 1: founder photo (path comes from assets.js) */
+.bg-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(0.85);
+}
+
+/* Layer 2: dark maroon overlay for readability */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 23, 22, 0.45) 0%,
+    rgba(74, 14, 26, 0.4) 55%,
+    rgba(28, 23, 22, 0.7) 100%
+  );
+}
+
+/* Layer 3: soft vignette */
+.bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+/* Layer 4: faint dotted pattern, a kolam-inspired texture */
+.bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: radial-gradient(var(--gold) 1px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+/* Layer 5: thin gold frame */
+.bg-frame {
+  position: absolute;
+  inset: 14px;
+  border: var(--gold-line);
+  border-radius: 6px;
+  pointer-events: none;
+}
+.bg-frame::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(201, 162, 75, 0.25);
+  border-radius: 3px;
+}
+
+/* App content sits above the background */
+.app-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+}
